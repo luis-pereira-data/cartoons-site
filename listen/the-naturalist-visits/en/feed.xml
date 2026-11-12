@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:podcast="https://podcastindex.org/namespace/1.0">
+  <channel>
+    <title>Lost &amp; Found Cartoons: stories to listen to</title>
+    <link>https://cartoons.luispereira.me/listen/the-naturalist-visits/en/</link>
+    <atom:link href="https://cartoons.luispereira.me/listen/the-naturalist-visits/en/feed.xml" rel="self" type="application/rss+xml"/>
+    <language>en</language>
+    <description>Short, gentle audio stories for kids 4–8, in English, from Lost &amp; Found Cartoons. Each one is the soundtrack of one of our cartoons: the same voices, music and sounds. Listen with the screen off.</description>
+    <copyright>© luiscper-cartoons</copyright>
+    <podcast:guid>51610f2a-5d28-59d8-9566-3f5523c7a4bb</podcast:guid>
+    <itunes:author>Lost &amp; Found Cartoons</itunes:author>
+    <itunes:image href="https://cartoons.luispereira.me/listen/the-naturalist-visits/en/cover.jpg"/>
+    <image>
+      <url>https://cartoons.luispereira.me/listen/the-naturalist-visits/en/cover.jpg</url>
+      <title>Lost &amp; Found Cartoons: stories to listen to</title>
+      <link>https://cartoons.luispereira.me/listen/the-naturalist-visits/en/</link>
+    </image>
+    <itunes:category text="Kids &amp; Family">
+      <itunes:category text="Stories for Kids"/>
+    </itunes:category>
+    <itunes:explicit>false</itunes:explicit>
+    <itunes:type>episodic</itunes:type>
+    <!-- Draft feed, not a release build: rebuild in strict mode before submitting. -->
+    <itunes:block>Yes</itunes:block>
+    <item>
+      <title>The Naturalist Visits</title>
+      <description>When a hushed old naturalist arrives at the Lost &amp; Found missing the last page of his field journal, hurried young sorter Mira has to slow down enough to discover he's lost something quieter, too. The soundtrack of our cartoon, 4 min. Transcript and the cartoon: https://cartoons.luispereira.me/listen/the-naturalist-visits/en/</description>
+      <link>https://cartoons.luispereira.me/listen/the-naturalist-visits/en/</link>
+      <guid isPermaLink="false">luiscper-cartoons:the-naturalist-visits:en:audio</guid>
+      <pubDate>Mon, 18 May 2026 19:24:35 GMT</pubDate>
+      <enclosure url="https://cartoons.luispereira.me/listen/the-naturalist-visits/en/the-naturalist-visits.en.mp3" length="2953158" type="audio/mpeg"/>
+      <itunes:duration>246</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://cartoons.luispereira.me/listen/the-naturalist-visits/en/cover.jpg"/>
+    </item>
+  </channel>
+</rss>

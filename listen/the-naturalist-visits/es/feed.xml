@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:podcast="https://podcastindex.org/namespace/1.0">
+  <channel>
+    <title>Dibujos de Objetos Perdidos: cuentos para escuchar</title>
+    <link>https://cartoons.luispereira.me/listen/the-naturalist-visits/es/</link>
+    <atom:link href="https://cartoons.luispereira.me/listen/the-naturalist-visits/es/feed.xml" rel="self" type="application/rss+xml"/>
+    <language>es</language>
+    <description>Cuentos cortos y tranquilos para escuchar, para niños de 4 a 8 años, en español, de Dibujos de Objetos Perdidos. Cada uno es la banda sonora de uno de nuestros dibujos animados: las mismas voces, música y sonidos. Para escuchar con la pantalla apagada.</description>
+    <copyright>© luiscper-cartoons</copyright>
+    <podcast:guid>99c7c839-f877-5093-b7b6-7e22f3ae9d5e</podcast:guid>
+    <itunes:author>Dibujos de Objetos Perdidos</itunes:author>
+    <itunes:image href="https://cartoons.luispereira.me/listen/the-naturalist-visits/es/cover.jpg"/>
+    <image>
+      <url>https://cartoons.luispereira.me/listen/the-naturalist-visits/es/cover.jpg</url>
+      <title>Dibujos de Objetos Perdidos: cuentos para escuchar</title>
+      <link>https://cartoons.luispereira.me/listen/the-naturalist-visits/es/</link>
+    </image>
+    <itunes:category text="Kids &amp; Family">
+      <itunes:category text="Stories for Kids"/>
+    </itunes:category>
+    <itunes:explicit>false</itunes:explicit>
+    <itunes:type>episodic</itunes:type>
+    <!-- Draft feed, not a release build: rebuild in strict mode before submitting. -->
+    <itunes:block>Yes</itunes:block>
+    <item>
+      <title>El Naturalista Nos Visita</title>
+      <description>Cuando un naturalista anciano y de voz susurrada llega a la Oficina de Objetos Perdidos buscando la última página de su cuaderno de campo, la pequeña Mira, siempre apurada, tendrá que aprender a ir despacio para descubrir que él también ha perdido algo más callado. La banda sonora de nuestro dibujo animado, 4 min. Transcripción y dibujo animado: https://cartoons.luispereira.me/listen/the-naturalist-visits/es/</description>
+      <link>https://cartoons.luispereira.me/listen/the-naturalist-visits/es/</link>
+      <guid isPermaLink="false">luiscper-cartoons:the-naturalist-visits:es:audio</guid>
+      <pubDate>Mon, 18 May 2026 19:24:36 GMT</pubDate>
+      <enclosure url="https://cartoons.luispereira.me/listen/the-naturalist-visits/es/the-naturalist-visits.es.mp3" length="2885789" type="audio/mpeg"/>
+      <itunes:duration>240</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://cartoons.luispereira.me/listen/the-naturalist-visits/es/cover.jpg"/>
+    </item>
+  </channel>
+</rss>

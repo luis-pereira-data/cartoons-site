@@ -1,0 +1,1339 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<style>
+@page { size: A4; margin: 12mm; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; color: black; }
+body {
+  background: #f0f0f0;
+  font-family: 'Comic Sans MS', 'Marker Felt', 'Chalkboard SE', sans-serif;
+}
+.page {
+  width: 210mm;
+  height: 297mm;
+  margin: 8mm auto;
+  background: white;
+  padding: 12mm;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  page-break-after: always;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  overflow: hidden;
+}
+@media print {
+  body { background: white; }
+  .page { box-shadow: none; margin: 0; }
+}
+.page-header h2 {
+  margin: 0 0 3mm 0;
+  font-size: 13pt;
+  border-bottom: 2px solid black;
+  padding-bottom: 2mm;
+  text-transform: capitalize;
+}
+.page-header .dim { color: #666; font-weight: normal; font-size: 11pt; }
+.page-footer { text-align: center; font-size: 9pt; color: #555; }
+
+.panels { display: grid; gap: 4mm; }
+.panels-1 { grid-template-rows: 1fr; }
+.panels-2 { grid-template-rows: 1fr 1fr; }
+.panels-3 {
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "a b" "c c";
+}
+.panels-3 .panel:nth-child(1) { grid-area: a; }
+.panels-3 .panel:nth-child(2) { grid-area: b; }
+.panels-3 .panel:nth-child(3) { grid-area: c; }
+.panels-4 { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; }
+
+.panel {
+  border: 2px solid black;
+  border-radius: 3mm;
+  padding: 2mm;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  gap: 2mm;
+  overflow: hidden;
+  background: white;
+  min-height: 0;
+}
+.panel-art { position: relative; min-height: 0; }
+.panel-art svg { width: 100%; height: 100%; display: block; }
+.framing-tag {
+  position: absolute; top: 1mm; right: 2mm;
+  font-size: 7pt; color: #666; letter-spacing: 0.5px;
+  background: white; padding: 0 1mm;
+}
+.bubbles { display: flex; flex-direction: column; gap: 1.5mm; }
+.bubble {
+  border: 1.5px solid black;
+  border-radius: 4mm;
+  padding: 1.5mm 3mm;
+  font-size: 9.5pt;
+  line-height: 1.25;
+  background: white;
+}
+.bubble .speaker {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 8pt;
+  letter-spacing: 0.5px;
+}
+
+.cover { display: flex; flex-direction: column; justify-content: center; align-items: center; }
+.cover-frame {
+  border: 4px double black;
+  padding: 18mm 14mm;
+  text-align: center;
+  border-radius: 4mm;
+  width: 100%;
+}
+.cover h1 { font-size: 32pt; margin: 0 0 8mm 0; line-height: 1.05; }
+.cover .subtitle { font-size: 13pt; margin: 0 0 10mm 0; font-style: italic; }
+.cover .instruction { font-size: 12pt; margin: 12mm 0 4mm 0; }
+.cover .lang-tag { font-size: 10pt; color: #666; margin: 0; }
+
+.toolbar {
+  position: fixed;
+  top: 8px; right: 8px;
+  background: white;
+  padding: 8px 12px;
+  border: 1px solid #888;
+  border-radius: 4px;
+  font-family: -apple-system, sans-serif;
+  font-size: 11pt;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+  z-index: 10;
+}
+.toolbar a { color: #06c; text-decoration: none; margin-right: 8px; cursor: pointer; }
+.toolbar a:hover { text-decoration: underline; }
+@media print { .toolbar { display: none; } }
+</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>El Naturalista Nos Visita — libro para colorear gratis para imprimir</title>
+<meta name="description" content="Dibujos para colorear gratis del cuento animado “El Naturalista Nos Visita”. Para niños de 4 a 8 años.">
+<link rel="canonical" href="https://cartoons.luispereira.me/es/the-naturalist-visits/coloring-book/">
+<link rel="alternate" hreflang="en" href="https://cartoons.luispereira.me/en/the-naturalist-visits/coloring-book/">
+<link rel="alternate" hreflang="es" href="https://cartoons.luispereira.me/es/the-naturalist-visits/coloring-book/">
+<link rel="alternate" hreflang="pt" href="https://cartoons.luispereira.me/pt/the-naturalist-visits/coloring-book/">
+<link rel="alternate" hreflang="x-default" href="https://cartoons.luispereira.me/en/the-naturalist-visits/coloring-book/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Dibujos de Objetos Perdidos">
+<meta property="og:title" content="El Naturalista Nos Visita — libro para colorear gratis para imprimir">
+<meta property="og:description" content="Dibujos para colorear gratis del cuento animado “El Naturalista Nos Visita”. Para niños de 4 a 8 años.">
+<meta property="og:url" content="https://cartoons.luispereira.me/es/the-naturalist-visits/coloring-book/">
+<meta property="og:locale" content="es_ES">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="El Naturalista Nos Visita — libro para colorear gratis para imprimir">
+<meta name="twitter:description" content="Dibujos para colorear gratis del cuento animado “El Naturalista Nos Visita”. Para niños de 4 a 8 años.">
+<meta property="og:image" content="https://cartoons.luispereira.me/es/the-naturalist-visits/thumbnail.png">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="720">
+<meta name="twitter:image" content="https://cartoons.luispereira.me/es/the-naturalist-visits/thumbnail.png">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "El Naturalista Nos Visita — libro para colorear gratis para imprimir",
+  "description": "Dibujos para colorear gratis del cuento animado “El Naturalista Nos Visita”. Para niños de 4 a 8 años.",
+  "url": "https://cartoons.luispereira.me/es/the-naturalist-visits/coloring-book/",
+  "image": "https://cartoons.luispereira.me/es/the-naturalist-visits/thumbnail.png",
+  "inLanguage": "es",
+  "isAccessibleForFree": true,
+  "learningResourceType": "Coloring page",
+  "typicalAgeRange": "4-8",
+  "isBasedOn": "https://cartoons.luispereira.me/es/the-naturalist-visits/"
+}
+</script>
+</head>
+<body>
+<div class="toolbar"><p><a href="/es/dibujos-navidad-para-colorear/">Nuevo: dibujos de Navidad</a></p><a href="#" onclick="window.print(); return false">🖨 Imprimir / Guardar como PDF</a> <span style="color:#888">·</span> <a href="coloring-book.pdf" download>⬇ Descargar PDF</a> <span style="color:#888">·</span> <a href="/es/the-naturalist-visits/">← Volver al dibujo animado</a></div>
+
+<section class="page cover">
+  <div class="cover-frame">
+    <h1>El Naturalista Nos Visita</h1>
+    <p class="subtitle">Cuando un naturalista anciano y de voz susurrada llega a la Oficina de Objetos Perdidos buscando la última página de su cuaderno de campo, la pequeña Mira, siempre apurada, tendrá que aprender a ir despacio para descubrir que él también ha perdido algo más callado.</p>
+    <p class="instruction">— color it as you read —</p>
+    <p class="lang-tag">[es]</p>
+  </div>
+</section>
+
+
+<section class="page">
+  <header class="page-header">
+    <h2>Scene 1 <span class="dim">of 6</span> — sorting floor</h2>
+  </header>
+  <div class="panels panels-4">
+    
+<div class="panel">
+  <div class="panel-art">
+    <span class="framing-tag">MEDIUM</span>
+    <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+      <rect x="0" y="0" width="400" height="220" fill="white" stroke="black" stroke-width="2"/>
+      
+<g>
+  <rect x="20"  y="40" width="50" height="50" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="80"  y="50" width="55" height="40" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="145" y="35" width="50" height="55" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="205" y="45" width="60" height="45" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="275" y="40" width="50" height="50" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="335" y="50" width="50" height="40" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="30"  y="55" width="30" height="10" fill="white" stroke="black" stroke-width="1.5"/>
+  <rect x="90"  y="60" width="35" height="10" fill="white" stroke="black" stroke-width="1.5"/>
+  <rect x="155" y="50" width="30" height="10" fill="white" stroke="black" stroke-width="1.5"/>
+  <rect x="215" y="55" width="40" height="10" fill="white" stroke="black" stroke-width="1.5"/>
+  <rect x="285" y="55" width="30" height="10" fill="white" stroke="black" stroke-width="1.5"/>
+  <line x1="0" y1="180" x2="400" y2="180" stroke="black" stroke-width="2"/>
+  <line x1="0" y1="200" x2="400" y2="200" stroke="black" stroke-width="2"/>
+  <line x1="0"   y1="180" x2="0"   y2="200" stroke="black" stroke-width="2"/>
+  <line x1="400" y1="180" x2="400" y2="200" stroke="black" stroke-width="2"/>
+  <circle cx="60"  cy="190" r="2" fill="black"/>
+  <circle cx="140" cy="190" r="2" fill="black"/>
+  <circle cx="220" cy="190" r="2" fill="black"/>
+  <circle cx="300" cy="190" r="2" fill="black"/>
+  <circle cx="380" cy="190" r="2" fill="black"/>
+</g>
+<g transform="translate(152.50, 52.00) scale(0.95)">
+<g>
+  <circle cx="22" cy="20" r="8" fill="white" stroke="black" stroke-width="2"/>
+  <circle cx="78" cy="20" r="8" fill="white" stroke="black" stroke-width="2"/>
+  <circle cx="50" cy="32" r="22" fill="white" stroke="black" stroke-width="2.5"/>
+  <circle cx="42" cy="32" r="2" fill="black"/>
+  <circle cx="58" cy="32" r="2" fill="black"/>
+  <path d="M 43 42 Q 50 47 57 42" fill="none" stroke="black" stroke-width="2" stroke-linecap="round"/>
+  <path d="M 28 60 Q 22 92 36 105 L 64 105 Q 78 92 72 60 Z" fill="white" stroke="black" stroke-width="2.5"/>
+  <path d="M 38 78 Q 38 92 50 94 Q 62 92 62 78" fill="none" stroke="black" stroke-width="1.5"/>
+  <path d="M 28 70 Q 14 80 16 95" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 72 70 Q 86 80 84 95" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 42 105 L 40 132" stroke="black" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 58 105 L 60 132" stroke="black" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <ellipse cx="40" cy="135" rx="6" ry="3" fill="white" stroke="black" stroke-width="2"/>
+  <ellipse cx="60" cy="135" rx="6" ry="3" fill="white" stroke="black" stroke-width="2"/>
+</g>
+</g>
+    </svg>
+  </div>
+  <div class="bubbles"><div class="bubble"><span class="speaker">Mira:</span> ¡Vale-vale-vale! ¡Visita nueva! ¡Hola! ¡Bienvenido! ¿Qué perdiste? ¿Un guante? ¿Un nombre? ¿Un diente flojo? Aquí llegan muchos dientes flojos.</div></div>
+</div>
+
+
+<div class="panel">
+  <div class="panel-art">
+    <span class="framing-tag">MEDIUM</span>
+    <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+      <rect x="0" y="0" width="400" height="220" fill="white" stroke="black" stroke-width="2"/>
+      
+<g>
+  <rect x="20"  y="40" width="50" height="50" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="80"  y="50" width="55" height="40" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="145" y="35" width="50" height="55" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="205" y="45" width="60" height="45" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="275" y="40" width="50" height="50" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="335" y="50" width="50" height="40" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="30"  y="55" width="30" height="10" fill="white" stroke="black" stroke-width="1.5"/>
+  <rect x="90"  y="60" width="35" height="10" fill="white" stroke="black" stroke-width="1.5"/>
+  <rect x="155" y="50" width="30" height="10" fill="white" stroke="black" stroke-width="1.5"/>
+  <rect x="215" y="55" width="40" height="10" fill="white" stroke="black" stroke-width="1.5"/>
+  <rect x="285" y="55" width="30" height="10" fill="white" stroke="black" stroke-width="1.5"/>
+  <line x1="0" y1="180" x2="400" y2="180" stroke="black" stroke-width="2"/>
+  <line x1="0" y1="200" x2="400" y2="200" stroke="black" stroke-width="2"/>
+  <line x1="0"   y1="180" x2="0"   y2="200" stroke="black" stroke-width="2"/>
+  <line x1="400" y1="180" x2="400" y2="200" stroke="black" stroke-width="2"/>
+  <circle cx="60"  cy="190" r="2" fill="black"/>
+  <circle cx="140" cy="190" r="2" fill="black"/>
+  <circle cx="220" cy="190" r="2" fill="black"/>
+  <circle cx="300" cy="190" r="2" fill="black"/>
+  <circle cx="380" cy="190" r="2" fill="black"/>
+</g>
+<g transform="translate(152.50, 52.00) scale(0.95)">
+<g>
+  <path d="M 38 18 Q 50 4 64 18" fill="white" stroke="black" stroke-width="2"/>
+  <circle cx="52" cy="22" r="14" fill="white" stroke="black" stroke-width="2.5"/>
+  <circle cx="46" cy="22" r="1.6" fill="black"/>
+  <circle cx="56" cy="22" r="1.6" fill="black"/>
+  <path d="M 46 28 Q 51 31 56 28" fill="none" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M 46 36 L 52 44 L 58 36 L 56 41 L 48 41 Z" fill="white" stroke="black" stroke-width="1.5"/>
+  <path d="M 40 44 Q 36 80 38 110 L 64 110 Q 64 80 60 44 Z" fill="white" stroke="black" stroke-width="2.5"/>
+  <path d="M 50 44 Q 48 60 50 75" fill="none" stroke="black" stroke-width="1"/>
+  <circle cx="50" cy="78" r="4" fill="white" stroke="black" stroke-width="1.5"/>
+  <path d="M 40 50 Q 30 70 36 90" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 60 50 Q 70 70 64 90" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 44 110 L 42 134" stroke="black" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 58 110 L 60 134" stroke="black" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 36 138 L 48 138 L 46 142 L 38 142 Z" fill="white" stroke="black" stroke-width="2"/>
+  <path d="M 54 138 L 66 138 L 64 142 L 56 142 Z" fill="white" stroke="black" stroke-width="2"/>
+</g>
+</g>
+    </svg>
+  </div>
+  <div class="bubbles"><div class="bubble"><span class="speaker">Mr. Pemberton Quill:</span> Hola. He perdido… una hojita. La última hoja. De mi librito.</div></div>
+</div>
+
+
+<div class="panel">
+  <div class="panel-art">
+    <span class="framing-tag">MEDIUM</span>
+    <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+      <rect x="0" y="0" width="400" height="220" fill="white" stroke="black" stroke-width="2"/>
+      
+<g>
+  <rect x="20"  y="40" width="50" height="50" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="80"  y="50" width="55" height="40" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="145" y="35" width="50" height="55" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="205" y="45" width="60" height="45" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="275" y="40" width="50" height="50" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="335" y="50" width="50" height="40" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="30"  y="55" width="30" height="10" fill="white" stroke="black" stroke-width="1.5"/>
+  <rect x="90"  y="60" width="35" height="10" fill="white" stroke="black" stroke-width="1.5"/>
+  <rect x="155" y="50" width="30" height="10" fill="white" stroke="black" stroke-width="1.5"/>
+  <rect x="215" y="55" width="40" height="10" fill="white" stroke="black" stroke-width="1.5"/>
+  <rect x="285" y="55" width="30" height="10" fill="white" stroke="black" stroke-width="1.5"/>
+  <line x1="0" y1="180" x2="400" y2="180" stroke="black" stroke-width="2"/>
+  <line x1="0" y1="200" x2="400" y2="200" stroke="black" stroke-width="2"/>
+  <line x1="0"   y1="180" x2="0"   y2="200" stroke="black" stroke-width="2"/>
+  <line x1="400" y1="180" x2="400" y2="200" stroke="black" stroke-width="2"/>
+  <circle cx="60"  cy="190" r="2" fill="black"/>
+  <circle cx="140" cy="190" r="2" fill="black"/>
+  <circle cx="220" cy="190" r="2" fill="black"/>
+  <circle cx="300" cy="190" r="2" fill="black"/>
+  <circle cx="380" cy="190" r="2" fill="black"/>
+</g>
+<g transform="translate(152.50, 52.00) scale(0.95)">
+<g>
+  <circle cx="22" cy="20" r="8" fill="white" stroke="black" stroke-width="2"/>
+  <circle cx="78" cy="20" r="8" fill="white" stroke="black" stroke-width="2"/>
+  <circle cx="50" cy="32" r="22" fill="white" stroke="black" stroke-width="2.5"/>
+  <circle cx="42" cy="32" r="2" fill="black"/>
+  <circle cx="58" cy="32" r="2" fill="black"/>
+  <path d="M 43 42 Q 50 47 57 42" fill="none" stroke="black" stroke-width="2" stroke-linecap="round"/>
+  <path d="M 28 60 Q 22 92 36 105 L 64 105 Q 78 92 72 60 Z" fill="white" stroke="black" stroke-width="2.5"/>
+  <path d="M 38 78 Q 38 92 50 94 Q 62 92 62 78" fill="none" stroke="black" stroke-width="1.5"/>
+  <path d="M 28 70 Q 14 80 16 95" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 72 70 Q 86 80 84 95" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 42 105 L 40 132" stroke="black" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 58 105 L 60 132" stroke="black" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <ellipse cx="40" cy="135" rx="6" ry="3" fill="white" stroke="black" stroke-width="2"/>
+  <ellipse cx="60" cy="135" rx="6" ry="3" fill="white" stroke="black" stroke-width="2"/>
+</g>
+</g>
+    </svg>
+  </div>
+  <div class="bubbles"><div class="bubble"><span class="speaker">Mira:</span> ¡Una hoja! Anotado. Papel. Última-hoja-de-un-libro. Fácil. ¿Color? ¿Tamaño? ¿De bolsillo? ¿Grande como un plato?</div></div>
+</div>
+
+
+<div class="panel">
+  <div class="panel-art">
+    <span class="framing-tag">CLOSE</span>
+    <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+      <rect x="0" y="0" width="400" height="220" fill="white" stroke="black" stroke-width="2"/>
+      
+<g>
+  <rect x="20"  y="40" width="50" height="50" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="80"  y="50" width="55" height="40" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="145" y="35" width="50" height="55" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="205" y="45" width="60" height="45" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="275" y="40" width="50" height="50" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="335" y="50" width="50" height="40" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="30"  y="55" width="30" height="10" fill="white" stroke="black" stroke-width="1.5"/>
+  <rect x="90"  y="60" width="35" height="10" fill="white" stroke="black" stroke-width="1.5"/>
+  <rect x="155" y="50" width="30" height="10" fill="white" stroke="black" stroke-width="1.5"/>
+  <rect x="215" y="55" width="40" height="10" fill="white" stroke="black" stroke-width="1.5"/>
+  <rect x="285" y="55" width="30" height="10" fill="white" stroke="black" stroke-width="1.5"/>
+  <line x1="0" y1="180" x2="400" y2="180" stroke="black" stroke-width="2"/>
+  <line x1="0" y1="200" x2="400" y2="200" stroke="black" stroke-width="2"/>
+  <line x1="0"   y1="180" x2="0"   y2="200" stroke="black" stroke-width="2"/>
+  <line x1="400" y1="180" x2="400" y2="200" stroke="black" stroke-width="2"/>
+  <circle cx="60"  cy="190" r="2" fill="black"/>
+  <circle cx="140" cy="190" r="2" fill="black"/>
+  <circle cx="220" cy="190" r="2" fill="black"/>
+  <circle cx="300" cy="190" r="2" fill="black"/>
+  <circle cx="380" cy="190" r="2" fill="black"/>
+</g>
+<g transform="translate(127.50, 2.00) scale(1.45)">
+<g>
+  <path d="M 38 18 Q 50 4 64 18" fill="white" stroke="black" stroke-width="2"/>
+  <circle cx="52" cy="22" r="14" fill="white" stroke="black" stroke-width="2.5"/>
+  <circle cx="46" cy="22" r="1.6" fill="black"/>
+  <circle cx="56" cy="22" r="1.6" fill="black"/>
+  <path d="M 46 28 Q 51 31 56 28" fill="none" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M 46 36 L 52 44 L 58 36 L 56 41 L 48 41 Z" fill="white" stroke="black" stroke-width="1.5"/>
+  <path d="M 40 44 Q 36 80 38 110 L 64 110 Q 64 80 60 44 Z" fill="white" stroke="black" stroke-width="2.5"/>
+  <path d="M 50 44 Q 48 60 50 75" fill="none" stroke="black" stroke-width="1"/>
+  <circle cx="50" cy="78" r="4" fill="white" stroke="black" stroke-width="1.5"/>
+  <path d="M 40 50 Q 30 70 36 90" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 60 50 Q 70 70 64 90" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 44 110 L 42 134" stroke="black" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 58 110 L 60 134" stroke="black" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 36 138 L 48 138 L 46 142 L 38 142 Z" fill="white" stroke="black" stroke-width="2"/>
+  <path d="M 54 138 L 66 138 L 64 142 L 56 142 Z" fill="white" stroke="black" stroke-width="2"/>
+</g>
+</g>
+    </svg>
+  </div>
+  <div class="bubbles"><div class="bubble"><span class="speaker">Mr. Pemberton Quill:</span> …De bolsillo. Con un dibujo. De un escarabajo. Un escarabajo muy chiquito, así—</div></div>
+</div>
+
+  </div>
+  <footer class="page-footer"><span>page 2</span></footer>
+</section>
+
+
+<section class="page">
+  <header class="page-header">
+    <h2>Scene 2 <span class="dim">of 6</span> — window out</h2>
+  </header>
+  <div class="panels panels-4">
+    
+<div class="panel">
+  <div class="panel-art">
+    <span class="framing-tag">WIDE</span>
+    <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+      <rect x="0" y="0" width="400" height="220" fill="white" stroke="black" stroke-width="2"/>
+      
+<g>
+  <ellipse cx="200" cy="100" rx="120" ry="75" fill="white" stroke="black" stroke-width="3"/>
+  <ellipse cx="200" cy="100" rx="115" ry="70" fill="white" stroke="black" stroke-width="1.5"/>
+  <circle cx="80"  cy="100" r="3" fill="white" stroke="black" stroke-width="1"/>
+  <circle cx="320" cy="100" r="3" fill="white" stroke="black" stroke-width="1"/>
+  <circle cx="200" cy="25"  r="3" fill="white" stroke="black" stroke-width="1"/>
+  <circle cx="200" cy="175" r="3" fill="white" stroke="black" stroke-width="1"/>
+  <circle cx="120" cy="35"  r="3" fill="white" stroke="black" stroke-width="1"/>
+  <circle cx="280" cy="35"  r="3" fill="white" stroke="black" stroke-width="1"/>
+  <circle cx="120" cy="165" r="3" fill="white" stroke="black" stroke-width="1"/>
+  <circle cx="280" cy="165" r="3" fill="white" stroke="black" stroke-width="1"/>
+  <line x1="0" y1="180" x2="400" y2="180" stroke="black" stroke-width="2"/>
+</g>
+<g transform="translate(87.50, 66.00) scale(0.85)">
+<g>
+  <circle cx="22" cy="20" r="8" fill="white" stroke="black" stroke-width="2"/>
+  <circle cx="78" cy="20" r="8" fill="white" stroke="black" stroke-width="2"/>
+  <circle cx="50" cy="32" r="22" fill="white" stroke="black" stroke-width="2.5"/>
+  <circle cx="42" cy="32" r="2" fill="black"/>
+  <circle cx="58" cy="32" r="2" fill="black"/>
+  <path d="M 43 42 Q 50 47 57 42" fill="none" stroke="black" stroke-width="2" stroke-linecap="round"/>
+  <path d="M 28 60 Q 22 92 36 105 L 64 105 Q 78 92 72 60 Z" fill="white" stroke="black" stroke-width="2.5"/>
+  <path d="M 38 78 Q 38 92 50 94 Q 62 92 62 78" fill="none" stroke="black" stroke-width="1.5"/>
+  <path d="M 28 70 Q 14 80 16 95" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 72 70 Q 86 80 84 95" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 42 105 L 40 132" stroke="black" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 58 105 L 60 132" stroke="black" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <ellipse cx="40" cy="135" rx="6" ry="3" fill="white" stroke="black" stroke-width="2"/>
+  <ellipse cx="60" cy="135" rx="6" ry="3" fill="white" stroke="black" stroke-width="2"/>
+</g>
+</g><g transform="translate(227.50, 66.00) scale(0.85)">
+<g>
+  <path d="M 38 18 Q 50 4 64 18" fill="white" stroke="black" stroke-width="2"/>
+  <circle cx="52" cy="22" r="14" fill="white" stroke="black" stroke-width="2.5"/>
+  <circle cx="46" cy="22" r="1.6" fill="black"/>
+  <circle cx="56" cy="22" r="1.6" fill="black"/>
+  <path d="M 46 28 Q 51 31 56 28" fill="none" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M 46 36 L 52 44 L 58 36 L 56 41 L 48 41 Z" fill="white" stroke="black" stroke-width="1.5"/>
+  <path d="M 40 44 Q 36 80 38 110 L 64 110 Q 64 80 60 44 Z" fill="white" stroke="black" stroke-width="2.5"/>
+  <path d="M 50 44 Q 48 60 50 75" fill="none" stroke="black" stroke-width="1"/>
+  <circle cx="50" cy="78" r="4" fill="white" stroke="black" stroke-width="1.5"/>
+  <path d="M 40 50 Q 30 70 36 90" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 60 50 Q 70 70 64 90" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 44 110 L 42 134" stroke="black" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 58 110 L 60 134" stroke="black" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 36 138 L 48 138 L 46 142 L 38 142 Z" fill="white" stroke="black" stroke-width="2"/>
+  <path d="M 54 138 L 66 138 L 64 142 L 56 142 Z" fill="white" stroke="black" stroke-width="2"/>
+</g>
+</g>
+    </svg>
+  </div>
+  <div class="bubbles"><div class="bubble"><span class="speaker">Mira:</span> La Ventana de Salida muestra dónde lo perdiste. Sostén la cosa — bueno, sostén la idea de la cosa — y mira. ¿Listo? ¡Ya!</div></div>
+</div>
+
+
+<div class="panel">
+  <div class="panel-art">
+    <span class="framing-tag">CLOSE</span>
+    <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+      <rect x="0" y="0" width="400" height="220" fill="white" stroke="black" stroke-width="2"/>
+      
+<g>
+  <ellipse cx="200" cy="100" rx="120" ry="75" fill="white" stroke="black" stroke-width="3"/>
+  <ellipse cx="200" cy="100" rx="115" ry="70" fill="white" stroke="black" stroke-width="1.5"/>
+  <circle cx="80"  cy="100" r="3" fill="white" stroke="black" stroke-width="1"/>
+  <circle cx="320" cy="100" r="3" fill="white" stroke="black" stroke-width="1"/>
+  <circle cx="200" cy="25"  r="3" fill="white" stroke="black" stroke-width="1"/>
+  <circle cx="200" cy="175" r="3" fill="white" stroke="black" stroke-width="1"/>
+  <circle cx="120" cy="35"  r="3" fill="white" stroke="black" stroke-width="1"/>
+  <circle cx="280" cy="35"  r="3" fill="white" stroke="black" stroke-width="1"/>
+  <circle cx="120" cy="165" r="3" fill="white" stroke="black" stroke-width="1"/>
+  <circle cx="280" cy="165" r="3" fill="white" stroke="black" stroke-width="1"/>
+  <line x1="0" y1="180" x2="400" y2="180" stroke="black" stroke-width="2"/>
+</g>
+<g transform="translate(127.50, 2.00) scale(1.45)">
+<g>
+  <circle cx="22" cy="20" r="8" fill="white" stroke="black" stroke-width="2"/>
+  <circle cx="78" cy="20" r="8" fill="white" stroke="black" stroke-width="2"/>
+  <circle cx="50" cy="32" r="22" fill="white" stroke="black" stroke-width="2.5"/>
+  <circle cx="42" cy="32" r="2" fill="black"/>
+  <circle cx="58" cy="32" r="2" fill="black"/>
+  <path d="M 43 42 Q 50 47 57 42" fill="none" stroke="black" stroke-width="2" stroke-linecap="round"/>
+  <path d="M 28 60 Q 22 92 36 105 L 64 105 Q 78 92 72 60 Z" fill="white" stroke="black" stroke-width="2.5"/>
+  <path d="M 38 78 Q 38 92 50 94 Q 62 92 62 78" fill="none" stroke="black" stroke-width="1.5"/>
+  <path d="M 28 70 Q 14 80 16 95" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 72 70 Q 86 80 84 95" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 42 105 L 40 132" stroke="black" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 58 105 L 60 132" stroke="black" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <ellipse cx="40" cy="135" rx="6" ry="3" fill="white" stroke="black" stroke-width="2"/>
+  <ellipse cx="60" cy="135" rx="6" ry="3" fill="white" stroke="black" stroke-width="2"/>
+</g>
+</g>
+    </svg>
+  </div>
+  <div class="bubbles"><div class="bubble"><span class="speaker">Mira:</span> Musgo. Tengo musgo. Mucho musgo. ¿Dónde está la hoja, dónde está la hoja…? No veo papel. Veo… hojas. Más hojas. Hojas aburridas. — perdón — hojas interesantes.</div></div>
+</div>
+
+
+<div class="panel">
+  <div class="panel-art">
+    <span class="framing-tag">MEDIUM</span>
+    <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+      <rect x="0" y="0" width="400" height="220" fill="white" stroke="black" stroke-width="2"/>
+      
+<g>
+  <ellipse cx="200" cy="100" rx="120" ry="75" fill="white" stroke="black" stroke-width="3"/>
+  <ellipse cx="200" cy="100" rx="115" ry="70" fill="white" stroke="black" stroke-width="1.5"/>
+  <circle cx="80"  cy="100" r="3" fill="white" stroke="black" stroke-width="1"/>
+  <circle cx="320" cy="100" r="3" fill="white" stroke="black" stroke-width="1"/>
+  <circle cx="200" cy="25"  r="3" fill="white" stroke="black" stroke-width="1"/>
+  <circle cx="200" cy="175" r="3" fill="white" stroke="black" stroke-width="1"/>
+  <circle cx="120" cy="35"  r="3" fill="white" stroke="black" stroke-width="1"/>
+  <circle cx="280" cy="35"  r="3" fill="white" stroke="black" stroke-width="1"/>
+  <circle cx="120" cy="165" r="3" fill="white" stroke="black" stroke-width="1"/>
+  <circle cx="280" cy="165" r="3" fill="white" stroke="black" stroke-width="1"/>
+  <line x1="0" y1="180" x2="400" y2="180" stroke="black" stroke-width="2"/>
+</g>
+<g transform="translate(152.50, 52.00) scale(0.95)">
+<g>
+  <path d="M 38 18 Q 50 4 64 18" fill="white" stroke="black" stroke-width="2"/>
+  <circle cx="52" cy="22" r="14" fill="white" stroke="black" stroke-width="2.5"/>
+  <circle cx="46" cy="22" r="1.6" fill="black"/>
+  <circle cx="56" cy="22" r="1.6" fill="black"/>
+  <path d="M 46 28 Q 51 31 56 28" fill="none" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M 46 36 L 52 44 L 58 36 L 56 41 L 48 41 Z" fill="white" stroke="black" stroke-width="1.5"/>
+  <path d="M 40 44 Q 36 80 38 110 L 64 110 Q 64 80 60 44 Z" fill="white" stroke="black" stroke-width="2.5"/>
+  <path d="M 50 44 Q 48 60 50 75" fill="none" stroke="black" stroke-width="1"/>
+  <circle cx="50" cy="78" r="4" fill="white" stroke="black" stroke-width="1.5"/>
+  <path d="M 40 50 Q 30 70 36 90" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 60 50 Q 70 70 64 90" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 44 110 L 42 134" stroke="black" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 58 110 L 60 134" stroke="black" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 36 138 L 48 138 L 46 142 L 38 142 Z" fill="white" stroke="black" stroke-width="2"/>
+  <path d="M 54 138 L 66 138 L 64 142 L 56 142 Z" fill="white" stroke="black" stroke-width="2"/>
+</g>
+</g>
+    </svg>
+  </div>
+  <div class="bubbles"><div class="bubble"><span class="speaker">Mr. Pemberton Quill:</span> …y aquí, justo aquí, una cosita pequeña se está despertando.</div></div>
+</div>
+
+
+<div class="panel">
+  <div class="panel-art">
+    <span class="framing-tag">CLOSE</span>
+    <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+      <rect x="0" y="0" width="400" height="220" fill="white" stroke="black" stroke-width="2"/>
+      
+<g>
+  <ellipse cx="200" cy="100" rx="120" ry="75" fill="white" stroke="black" stroke-width="3"/>
+  <ellipse cx="200" cy="100" rx="115" ry="70" fill="white" stroke="black" stroke-width="1.5"/>
+  <circle cx="80"  cy="100" r="3" fill="white" stroke="black" stroke-width="1"/>
+  <circle cx="320" cy="100" r="3" fill="white" stroke="black" stroke-width="1"/>
+  <circle cx="200" cy="25"  r="3" fill="white" stroke="black" stroke-width="1"/>
+  <circle cx="200" cy="175" r="3" fill="white" stroke="black" stroke-width="1"/>
+  <circle cx="120" cy="35"  r="3" fill="white" stroke="black" stroke-width="1"/>
+  <circle cx="280" cy="35"  r="3" fill="white" stroke="black" stroke-width="1"/>
+  <circle cx="120" cy="165" r="3" fill="white" stroke="black" stroke-width="1"/>
+  <circle cx="280" cy="165" r="3" fill="white" stroke="black" stroke-width="1"/>
+  <line x1="0" y1="180" x2="400" y2="180" stroke="black" stroke-width="2"/>
+</g>
+<g transform="translate(127.50, 2.00) scale(1.45)">
+<g>
+  <circle cx="22" cy="20" r="8" fill="white" stroke="black" stroke-width="2"/>
+  <circle cx="78" cy="20" r="8" fill="white" stroke="black" stroke-width="2"/>
+  <circle cx="50" cy="32" r="22" fill="white" stroke="black" stroke-width="2.5"/>
+  <circle cx="42" cy="32" r="2" fill="black"/>
+  <circle cx="58" cy="32" r="2" fill="black"/>
+  <path d="M 43 42 Q 50 47 57 42" fill="none" stroke="black" stroke-width="2" stroke-linecap="round"/>
+  <path d="M 28 60 Q 22 92 36 105 L 64 105 Q 78 92 72 60 Z" fill="white" stroke="black" stroke-width="2.5"/>
+  <path d="M 38 78 Q 38 92 50 94 Q 62 92 62 78" fill="none" stroke="black" stroke-width="1.5"/>
+  <path d="M 28 70 Q 14 80 16 95" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 72 70 Q 86 80 84 95" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 42 105 L 40 132" stroke="black" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 58 105 L 60 132" stroke="black" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <ellipse cx="40" cy="135" rx="6" ry="3" fill="white" stroke="black" stroke-width="2"/>
+  <ellipse cx="60" cy="135" rx="6" ry="3" fill="white" stroke="black" stroke-width="2"/>
+</g>
+</g>
+    </svg>
+  </div>
+  <div class="bubbles"><div class="bubble"><span class="speaker">Mira:</span> ¿Qué?</div></div>
+</div>
+
+  </div>
+  <footer class="page-footer"><span>page 3</span></footer>
+</section>
+
+
+<section class="page">
+  <header class="page-header">
+    <h2>Scene 3 <span class="dim">of 6</span> — sorting floor</h2>
+  </header>
+  <div class="panels panels-3">
+    
+<div class="panel">
+  <div class="panel-art">
+    <span class="framing-tag">MEDIUM</span>
+    <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+      <rect x="0" y="0" width="400" height="220" fill="white" stroke="black" stroke-width="2"/>
+      
+<g>
+  <rect x="20"  y="40" width="50" height="50" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="80"  y="50" width="55" height="40" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="145" y="35" width="50" height="55" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="205" y="45" width="60" height="45" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="275" y="40" width="50" height="50" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="335" y="50" width="50" height="40" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="30"  y="55" width="30" height="10" fill="white" stroke="black" stroke-width="1.5"/>
+  <rect x="90"  y="60" width="35" height="10" fill="white" stroke="black" stroke-width="1.5"/>
+  <rect x="155" y="50" width="30" height="10" fill="white" stroke="black" stroke-width="1.5"/>
+  <rect x="215" y="55" width="40" height="10" fill="white" stroke="black" stroke-width="1.5"/>
+  <rect x="285" y="55" width="30" height="10" fill="white" stroke="black" stroke-width="1.5"/>
+  <line x1="0" y1="180" x2="400" y2="180" stroke="black" stroke-width="2"/>
+  <line x1="0" y1="200" x2="400" y2="200" stroke="black" stroke-width="2"/>
+  <line x1="0"   y1="180" x2="0"   y2="200" stroke="black" stroke-width="2"/>
+  <line x1="400" y1="180" x2="400" y2="200" stroke="black" stroke-width="2"/>
+  <circle cx="60"  cy="190" r="2" fill="black"/>
+  <circle cx="140" cy="190" r="2" fill="black"/>
+  <circle cx="220" cy="190" r="2" fill="black"/>
+  <circle cx="300" cy="190" r="2" fill="black"/>
+  <circle cx="380" cy="190" r="2" fill="black"/>
+</g>
+<g transform="translate(152.50, 52.00) scale(0.95)">
+<g>
+  <circle cx="22" cy="20" r="8" fill="white" stroke="black" stroke-width="2"/>
+  <circle cx="78" cy="20" r="8" fill="white" stroke="black" stroke-width="2"/>
+  <circle cx="50" cy="32" r="22" fill="white" stroke="black" stroke-width="2.5"/>
+  <circle cx="42" cy="32" r="2" fill="black"/>
+  <circle cx="58" cy="32" r="2" fill="black"/>
+  <path d="M 43 42 Q 50 47 57 42" fill="none" stroke="black" stroke-width="2" stroke-linecap="round"/>
+  <path d="M 28 60 Q 22 92 36 105 L 64 105 Q 78 92 72 60 Z" fill="white" stroke="black" stroke-width="2.5"/>
+  <path d="M 38 78 Q 38 92 50 94 Q 62 92 62 78" fill="none" stroke="black" stroke-width="1.5"/>
+  <path d="M 28 70 Q 14 80 16 95" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 72 70 Q 86 80 84 95" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 42 105 L 40 132" stroke="black" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 58 105 L 60 132" stroke="black" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <ellipse cx="40" cy="135" rx="6" ry="3" fill="white" stroke="black" stroke-width="2"/>
+  <ellipse cx="60" cy="135" rx="6" ry="3" fill="white" stroke="black" stroke-width="2"/>
+</g>
+</g>
+    </svg>
+  </div>
+  <div class="bubbles"><div class="bubble"><span class="speaker">Mira:</span> ¡Vale-vale-vale, plan! Reviso las cintas, reviso el cesto del papel, reviso el cesto de los dibujos, reviso el sub-cesto de dibujos-de-escarabajo, pan comido—</div></div>
+</div>
+
+
+<div class="panel">
+  <div class="panel-art">
+    <span class="framing-tag">WIDE</span>
+    <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+      <rect x="0" y="0" width="400" height="220" fill="white" stroke="black" stroke-width="2"/>
+      
+<g>
+  <rect x="20"  y="40" width="50" height="50" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="80"  y="50" width="55" height="40" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="145" y="35" width="50" height="55" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="205" y="45" width="60" height="45" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="275" y="40" width="50" height="50" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="335" y="50" width="50" height="40" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="30"  y="55" width="30" height="10" fill="white" stroke="black" stroke-width="1.5"/>
+  <rect x="90"  y="60" width="35" height="10" fill="white" stroke="black" stroke-width="1.5"/>
+  <rect x="155" y="50" width="30" height="10" fill="white" stroke="black" stroke-width="1.5"/>
+  <rect x="215" y="55" width="40" height="10" fill="white" stroke="black" stroke-width="1.5"/>
+  <rect x="285" y="55" width="30" height="10" fill="white" stroke="black" stroke-width="1.5"/>
+  <line x1="0" y1="180" x2="400" y2="180" stroke="black" stroke-width="2"/>
+  <line x1="0" y1="200" x2="400" y2="200" stroke="black" stroke-width="2"/>
+  <line x1="0"   y1="180" x2="0"   y2="200" stroke="black" stroke-width="2"/>
+  <line x1="400" y1="180" x2="400" y2="200" stroke="black" stroke-width="2"/>
+  <circle cx="60"  cy="190" r="2" fill="black"/>
+  <circle cx="140" cy="190" r="2" fill="black"/>
+  <circle cx="220" cy="190" r="2" fill="black"/>
+  <circle cx="300" cy="190" r="2" fill="black"/>
+  <circle cx="380" cy="190" r="2" fill="black"/>
+</g>
+<g transform="translate(87.50, 66.00) scale(0.85)">
+<g>
+  <circle cx="22" cy="20" r="8" fill="white" stroke="black" stroke-width="2"/>
+  <circle cx="78" cy="20" r="8" fill="white" stroke="black" stroke-width="2"/>
+  <circle cx="50" cy="32" r="22" fill="white" stroke="black" stroke-width="2.5"/>
+  <circle cx="42" cy="32" r="2" fill="black"/>
+  <circle cx="58" cy="32" r="2" fill="black"/>
+  <path d="M 43 42 Q 50 47 57 42" fill="none" stroke="black" stroke-width="2" stroke-linecap="round"/>
+  <path d="M 28 60 Q 22 92 36 105 L 64 105 Q 78 92 72 60 Z" fill="white" stroke="black" stroke-width="2.5"/>
+  <path d="M 38 78 Q 38 92 50 94 Q 62 92 62 78" fill="none" stroke="black" stroke-width="1.5"/>
+  <path d="M 28 70 Q 14 80 16 95" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 72 70 Q 86 80 84 95" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 42 105 L 40 132" stroke="black" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 58 105 L 60 132" stroke="black" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <ellipse cx="40" cy="135" rx="6" ry="3" fill="white" stroke="black" stroke-width="2"/>
+  <ellipse cx="60" cy="135" rx="6" ry="3" fill="white" stroke="black" stroke-width="2"/>
+</g>
+</g><g transform="translate(227.50, 66.00) scale(0.85)">
+<g>
+  <path d="M 38 18 Q 50 4 64 18" fill="white" stroke="black" stroke-width="2"/>
+  <circle cx="52" cy="22" r="14" fill="white" stroke="black" stroke-width="2.5"/>
+  <circle cx="46" cy="22" r="1.6" fill="black"/>
+  <circle cx="56" cy="22" r="1.6" fill="black"/>
+  <path d="M 46 28 Q 51 31 56 28" fill="none" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M 46 36 L 52 44 L 58 36 L 56 41 L 48 41 Z" fill="white" stroke="black" stroke-width="1.5"/>
+  <path d="M 40 44 Q 36 80 38 110 L 64 110 Q 64 80 60 44 Z" fill="white" stroke="black" stroke-width="2.5"/>
+  <path d="M 50 44 Q 48 60 50 75" fill="none" stroke="black" stroke-width="1"/>
+  <circle cx="50" cy="78" r="4" fill="white" stroke="black" stroke-width="1.5"/>
+  <path d="M 40 50 Q 30 70 36 90" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 60 50 Q 70 70 64 90" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 44 110 L 42 134" stroke="black" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 58 110 L 60 134" stroke="black" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 36 138 L 48 138 L 46 142 L 38 142 Z" fill="white" stroke="black" stroke-width="2"/>
+  <path d="M 54 138 L 66 138 L 64 142 L 56 142 Z" fill="white" stroke="black" stroke-width="2"/>
+</g>
+</g>
+    </svg>
+  </div>
+  <div class="bubbles"><div class="bubble"><span class="speaker">Mr. Pemberton Quill:</span> …creo que he perdido otra cosa también.</div></div>
+</div>
+
+
+<div class="panel">
+  <div class="panel-art">
+    <span class="framing-tag">MEDIUM</span>
+    <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+      <rect x="0" y="0" width="400" height="220" fill="white" stroke="black" stroke-width="2"/>
+      
+<g>
+  <rect x="20"  y="40" width="50" height="50" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="80"  y="50" width="55" height="40" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="145" y="35" width="50" height="55" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="205" y="45" width="60" height="45" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="275" y="40" width="50" height="50" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="335" y="50" width="50" height="40" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="30"  y="55" width="30" height="10" fill="white" stroke="black" stroke-width="1.5"/>
+  <rect x="90"  y="60" width="35" height="10" fill="white" stroke="black" stroke-width="1.5"/>
+  <rect x="155" y="50" width="30" height="10" fill="white" stroke="black" stroke-width="1.5"/>
+  <rect x="215" y="55" width="40" height="10" fill="white" stroke="black" stroke-width="1.5"/>
+  <rect x="285" y="55" width="30" height="10" fill="white" stroke="black" stroke-width="1.5"/>
+  <line x1="0" y1="180" x2="400" y2="180" stroke="black" stroke-width="2"/>
+  <line x1="0" y1="200" x2="400" y2="200" stroke="black" stroke-width="2"/>
+  <line x1="0"   y1="180" x2="0"   y2="200" stroke="black" stroke-width="2"/>
+  <line x1="400" y1="180" x2="400" y2="200" stroke="black" stroke-width="2"/>
+  <circle cx="60"  cy="190" r="2" fill="black"/>
+  <circle cx="140" cy="190" r="2" fill="black"/>
+  <circle cx="220" cy="190" r="2" fill="black"/>
+  <circle cx="300" cy="190" r="2" fill="black"/>
+  <circle cx="380" cy="190" r="2" fill="black"/>
+</g>
+<g transform="translate(152.50, 52.00) scale(0.95)">
+<g>
+  <circle cx="22" cy="20" r="8" fill="white" stroke="black" stroke-width="2"/>
+  <circle cx="78" cy="20" r="8" fill="white" stroke="black" stroke-width="2"/>
+  <circle cx="50" cy="32" r="22" fill="white" stroke="black" stroke-width="2.5"/>
+  <circle cx="42" cy="32" r="2" fill="black"/>
+  <circle cx="58" cy="32" r="2" fill="black"/>
+  <path d="M 43 42 Q 50 47 57 42" fill="none" stroke="black" stroke-width="2" stroke-linecap="round"/>
+  <path d="M 28 60 Q 22 92 36 105 L 64 105 Q 78 92 72 60 Z" fill="white" stroke="black" stroke-width="2.5"/>
+  <path d="M 38 78 Q 38 92 50 94 Q 62 92 62 78" fill="none" stroke="black" stroke-width="1.5"/>
+  <path d="M 28 70 Q 14 80 16 95" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 72 70 Q 86 80 84 95" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 42 105 L 40 132" stroke="black" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 58 105 L 60 132" stroke="black" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <ellipse cx="40" cy="135" rx="6" ry="3" fill="white" stroke="black" stroke-width="2"/>
+  <ellipse cx="60" cy="135" rx="6" ry="3" fill="white" stroke="black" stroke-width="2"/>
+</g>
+</g>
+    </svg>
+  </div>
+  <div class="bubbles"><div class="bubble"><span class="speaker">Mira:</span> ¡LA TENGO! ¡Hoja-escarabajo! ¡Última hoja! Señor — Señor Alto-Callado — ¡LA ENCONTRÉ!</div></div>
+</div>
+
+  </div>
+  <footer class="page-footer"><span>page 4</span></footer>
+</section>
+
+
+<section class="page">
+  <header class="page-header">
+    <h2>Scene 4 <span class="dim">of 6</span> — comfort couch</h2>
+  </header>
+  <div class="panels panels-4">
+    
+<div class="panel">
+  <div class="panel-art">
+    <span class="framing-tag">MEDIUM</span>
+    <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+      <rect x="0" y="0" width="400" height="220" fill="white" stroke="black" stroke-width="2"/>
+      
+<g>
+  <rect x="30" y="60" width="340" height="80" fill="white" stroke="black" stroke-width="2.5" rx="10"/>
+  <line x1="200" y1="65" x2="200" y2="135" stroke="black" stroke-width="1.5"/>
+  <rect x="20"  y="90" width="20" height="60" fill="white" stroke="black" stroke-width="2.5" rx="3"/>
+  <rect x="360" y="90" width="20" height="60" fill="white" stroke="black" stroke-width="2.5" rx="3"/>
+  <ellipse cx="120" cy="100" rx="22" ry="14" fill="white" stroke="black" stroke-width="2"/>
+  <line x1="0" y1="180" x2="400" y2="180" stroke="black" stroke-width="2"/>
+</g>
+<g transform="translate(152.50, 52.00) scale(0.95)">
+<g>
+  <path d="M 38 18 Q 50 4 64 18" fill="white" stroke="black" stroke-width="2"/>
+  <circle cx="52" cy="22" r="14" fill="white" stroke="black" stroke-width="2.5"/>
+  <circle cx="46" cy="22" r="1.6" fill="black"/>
+  <circle cx="56" cy="22" r="1.6" fill="black"/>
+  <path d="M 46 28 Q 51 31 56 28" fill="none" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M 46 36 L 52 44 L 58 36 L 56 41 L 48 41 Z" fill="white" stroke="black" stroke-width="1.5"/>
+  <path d="M 40 44 Q 36 80 38 110 L 64 110 Q 64 80 60 44 Z" fill="white" stroke="black" stroke-width="2.5"/>
+  <path d="M 50 44 Q 48 60 50 75" fill="none" stroke="black" stroke-width="1"/>
+  <circle cx="50" cy="78" r="4" fill="white" stroke="black" stroke-width="1.5"/>
+  <path d="M 40 50 Q 30 70 36 90" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 60 50 Q 70 70 64 90" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 44 110 L 42 134" stroke="black" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 58 110 L 60 134" stroke="black" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 36 138 L 48 138 L 46 142 L 38 142 Z" fill="white" stroke="black" stroke-width="2"/>
+  <path d="M 54 138 L 66 138 L 64 142 L 56 142 Z" fill="white" stroke="black" stroke-width="2"/>
+</g>
+</g>
+    </svg>
+  </div>
+  <div class="bubbles"><div class="bubble"><span class="speaker">Mr. Pemberton Quill:</span> …Gracias.</div></div>
+</div>
+
+
+<div class="panel">
+  <div class="panel-art">
+    <span class="framing-tag">CLOSE</span>
+    <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+      <rect x="0" y="0" width="400" height="220" fill="white" stroke="black" stroke-width="2"/>
+      
+<g>
+  <rect x="30" y="60" width="340" height="80" fill="white" stroke="black" stroke-width="2.5" rx="10"/>
+  <line x1="200" y1="65" x2="200" y2="135" stroke="black" stroke-width="1.5"/>
+  <rect x="20"  y="90" width="20" height="60" fill="white" stroke="black" stroke-width="2.5" rx="3"/>
+  <rect x="360" y="90" width="20" height="60" fill="white" stroke="black" stroke-width="2.5" rx="3"/>
+  <ellipse cx="120" cy="100" rx="22" ry="14" fill="white" stroke="black" stroke-width="2"/>
+  <line x1="0" y1="180" x2="400" y2="180" stroke="black" stroke-width="2"/>
+</g>
+<g transform="translate(127.50, 2.00) scale(1.45)">
+<g>
+  <circle cx="22" cy="20" r="8" fill="white" stroke="black" stroke-width="2"/>
+  <circle cx="78" cy="20" r="8" fill="white" stroke="black" stroke-width="2"/>
+  <circle cx="50" cy="32" r="22" fill="white" stroke="black" stroke-width="2.5"/>
+  <circle cx="42" cy="32" r="2" fill="black"/>
+  <circle cx="58" cy="32" r="2" fill="black"/>
+  <path d="M 43 42 Q 50 47 57 42" fill="none" stroke="black" stroke-width="2" stroke-linecap="round"/>
+  <path d="M 28 60 Q 22 92 36 105 L 64 105 Q 78 92 72 60 Z" fill="white" stroke="black" stroke-width="2.5"/>
+  <path d="M 38 78 Q 38 92 50 94 Q 62 92 62 78" fill="none" stroke="black" stroke-width="1.5"/>
+  <path d="M 28 70 Q 14 80 16 95" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 72 70 Q 86 80 84 95" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 42 105 L 40 132" stroke="black" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 58 105 L 60 132" stroke="black" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <ellipse cx="40" cy="135" rx="6" ry="3" fill="white" stroke="black" stroke-width="2"/>
+  <ellipse cx="60" cy="135" rx="6" ry="3" fill="white" stroke="black" stroke-width="2"/>
+</g>
+</g>
+    </svg>
+  </div>
+  <div class="bubbles"><div class="bubble"><span class="speaker">Mira:</span> …¿Estás bien? No pareces listo.</div></div>
+</div>
+
+
+<div class="panel">
+  <div class="panel-art">
+    <span class="framing-tag">CLOSE</span>
+    <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+      <rect x="0" y="0" width="400" height="220" fill="white" stroke="black" stroke-width="2"/>
+      
+<g>
+  <rect x="30" y="60" width="340" height="80" fill="white" stroke="black" stroke-width="2.5" rx="10"/>
+  <line x1="200" y1="65" x2="200" y2="135" stroke="black" stroke-width="1.5"/>
+  <rect x="20"  y="90" width="20" height="60" fill="white" stroke="black" stroke-width="2.5" rx="3"/>
+  <rect x="360" y="90" width="20" height="60" fill="white" stroke="black" stroke-width="2.5" rx="3"/>
+  <ellipse cx="120" cy="100" rx="22" ry="14" fill="white" stroke="black" stroke-width="2"/>
+  <line x1="0" y1="180" x2="400" y2="180" stroke="black" stroke-width="2"/>
+</g>
+<g transform="translate(127.50, 2.00) scale(1.45)">
+<g>
+  <path d="M 38 18 Q 50 4 64 18" fill="white" stroke="black" stroke-width="2"/>
+  <circle cx="52" cy="22" r="14" fill="white" stroke="black" stroke-width="2.5"/>
+  <circle cx="46" cy="22" r="1.6" fill="black"/>
+  <circle cx="56" cy="22" r="1.6" fill="black"/>
+  <path d="M 46 28 Q 51 31 56 28" fill="none" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M 46 36 L 52 44 L 58 36 L 56 41 L 48 41 Z" fill="white" stroke="black" stroke-width="1.5"/>
+  <path d="M 40 44 Q 36 80 38 110 L 64 110 Q 64 80 60 44 Z" fill="white" stroke="black" stroke-width="2.5"/>
+  <path d="M 50 44 Q 48 60 50 75" fill="none" stroke="black" stroke-width="1"/>
+  <circle cx="50" cy="78" r="4" fill="white" stroke="black" stroke-width="1.5"/>
+  <path d="M 40 50 Q 30 70 36 90" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 60 50 Q 70 70 64 90" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 44 110 L 42 134" stroke="black" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 58 110 L 60 134" stroke="black" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 36 138 L 48 138 L 46 142 L 38 142 Z" fill="white" stroke="black" stroke-width="2"/>
+  <path d="M 54 138 L 66 138 L 64 142 L 56 142 Z" fill="white" stroke="black" stroke-width="2"/>
+</g>
+</g>
+    </svg>
+  </div>
+  <div class="bubbles"><div class="bubble"><span class="speaker">Mr. Pemberton Quill:</span> No. No me siento listo.</div></div>
+</div>
+
+
+<div class="panel">
+  <div class="panel-art">
+    <span class="framing-tag">CLOSE</span>
+    <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+      <rect x="0" y="0" width="400" height="220" fill="white" stroke="black" stroke-width="2"/>
+      
+<g>
+  <rect x="30" y="60" width="340" height="80" fill="white" stroke="black" stroke-width="2.5" rx="10"/>
+  <line x1="200" y1="65" x2="200" y2="135" stroke="black" stroke-width="1.5"/>
+  <rect x="20"  y="90" width="20" height="60" fill="white" stroke="black" stroke-width="2.5" rx="3"/>
+  <rect x="360" y="90" width="20" height="60" fill="white" stroke="black" stroke-width="2.5" rx="3"/>
+  <ellipse cx="120" cy="100" rx="22" ry="14" fill="white" stroke="black" stroke-width="2"/>
+  <line x1="0" y1="180" x2="400" y2="180" stroke="black" stroke-width="2"/>
+</g>
+<g transform="translate(127.50, 2.00) scale(1.45)">
+<g>
+  <circle cx="22" cy="20" r="8" fill="white" stroke="black" stroke-width="2"/>
+  <circle cx="78" cy="20" r="8" fill="white" stroke="black" stroke-width="2"/>
+  <circle cx="50" cy="32" r="22" fill="white" stroke="black" stroke-width="2.5"/>
+  <circle cx="42" cy="32" r="2" fill="black"/>
+  <circle cx="58" cy="32" r="2" fill="black"/>
+  <path d="M 43 42 Q 50 47 57 42" fill="none" stroke="black" stroke-width="2" stroke-linecap="round"/>
+  <path d="M 28 60 Q 22 92 36 105 L 64 105 Q 78 92 72 60 Z" fill="white" stroke="black" stroke-width="2.5"/>
+  <path d="M 38 78 Q 38 92 50 94 Q 62 92 62 78" fill="none" stroke="black" stroke-width="1.5"/>
+  <path d="M 28 70 Q 14 80 16 95" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 72 70 Q 86 80 84 95" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 42 105 L 40 132" stroke="black" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 58 105 L 60 132" stroke="black" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <ellipse cx="40" cy="135" rx="6" ry="3" fill="white" stroke="black" stroke-width="2"/>
+  <ellipse cx="60" cy="135" rx="6" ry="3" fill="white" stroke="black" stroke-width="2"/>
+</g>
+</g>
+    </svg>
+  </div>
+  <div class="bubbles"><div class="bubble"><span class="speaker">Mira:</span> ¿Perdiste dos cosas?</div></div>
+</div>
+
+  </div>
+  <footer class="page-footer"><span>page 5</span></footer>
+</section>
+
+
+<section class="page">
+  <header class="page-header">
+    <h2>Scene 5 <span class="dim">of 6</span> — comfort couch</h2>
+  </header>
+  <div class="panels panels-4">
+    
+<div class="panel">
+  <div class="panel-art">
+    <span class="framing-tag">CLOSE</span>
+    <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+      <rect x="0" y="0" width="400" height="220" fill="white" stroke="black" stroke-width="2"/>
+      
+<g>
+  <rect x="30" y="60" width="340" height="80" fill="white" stroke="black" stroke-width="2.5" rx="10"/>
+  <line x1="200" y1="65" x2="200" y2="135" stroke="black" stroke-width="1.5"/>
+  <rect x="20"  y="90" width="20" height="60" fill="white" stroke="black" stroke-width="2.5" rx="3"/>
+  <rect x="360" y="90" width="20" height="60" fill="white" stroke="black" stroke-width="2.5" rx="3"/>
+  <ellipse cx="120" cy="100" rx="22" ry="14" fill="white" stroke="black" stroke-width="2"/>
+  <line x1="0" y1="180" x2="400" y2="180" stroke="black" stroke-width="2"/>
+</g>
+<g transform="translate(127.50, 2.00) scale(1.45)">
+<g>
+  <path d="M 38 18 Q 50 4 64 18" fill="white" stroke="black" stroke-width="2"/>
+  <circle cx="52" cy="22" r="14" fill="white" stroke="black" stroke-width="2.5"/>
+  <circle cx="46" cy="22" r="1.6" fill="black"/>
+  <circle cx="56" cy="22" r="1.6" fill="black"/>
+  <path d="M 46 28 Q 51 31 56 28" fill="none" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M 46 36 L 52 44 L 58 36 L 56 41 L 48 41 Z" fill="white" stroke="black" stroke-width="1.5"/>
+  <path d="M 40 44 Q 36 80 38 110 L 64 110 Q 64 80 60 44 Z" fill="white" stroke="black" stroke-width="2.5"/>
+  <path d="M 50 44 Q 48 60 50 75" fill="none" stroke="black" stroke-width="1"/>
+  <circle cx="50" cy="78" r="4" fill="white" stroke="black" stroke-width="1.5"/>
+  <path d="M 40 50 Q 30 70 36 90" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 60 50 Q 70 70 64 90" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 44 110 L 42 134" stroke="black" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 58 110 L 60 134" stroke="black" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 36 138 L 48 138 L 46 142 L 38 142 Z" fill="white" stroke="black" stroke-width="2"/>
+  <path d="M 54 138 L 66 138 L 64 142 L 56 142 Z" fill="white" stroke="black" stroke-width="2"/>
+</g>
+</g>
+    </svg>
+  </div>
+  <div class="bubbles"><div class="bubble"><span class="speaker">Mr. Pemberton Quill:</span> …una gota de agua. Rueda. El helecho se inclina. Un escarabajito marrón sale. Tiene la espalda brillante. Se detiene. Piensa un pensamiento de escarabajo. Y sigue.</div></div>
+</div>
+
+
+<div class="panel">
+  <div class="panel-art">
+    <span class="framing-tag">CLOSE</span>
+    <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+      <rect x="0" y="0" width="400" height="220" fill="white" stroke="black" stroke-width="2"/>
+      
+<g>
+  <rect x="30" y="60" width="340" height="80" fill="white" stroke="black" stroke-width="2.5" rx="10"/>
+  <line x1="200" y1="65" x2="200" y2="135" stroke="black" stroke-width="1.5"/>
+  <rect x="20"  y="90" width="20" height="60" fill="white" stroke="black" stroke-width="2.5" rx="3"/>
+  <rect x="360" y="90" width="20" height="60" fill="white" stroke="black" stroke-width="2.5" rx="3"/>
+  <ellipse cx="120" cy="100" rx="22" ry="14" fill="white" stroke="black" stroke-width="2"/>
+  <line x1="0" y1="180" x2="400" y2="180" stroke="black" stroke-width="2"/>
+</g>
+<g transform="translate(127.50, 2.00) scale(1.45)">
+<g>
+  <path d="M 38 18 Q 50 4 64 18" fill="white" stroke="black" stroke-width="2"/>
+  <circle cx="52" cy="22" r="14" fill="white" stroke="black" stroke-width="2.5"/>
+  <circle cx="46" cy="22" r="1.6" fill="black"/>
+  <circle cx="56" cy="22" r="1.6" fill="black"/>
+  <path d="M 46 28 Q 51 31 56 28" fill="none" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M 46 36 L 52 44 L 58 36 L 56 41 L 48 41 Z" fill="white" stroke="black" stroke-width="1.5"/>
+  <path d="M 40 44 Q 36 80 38 110 L 64 110 Q 64 80 60 44 Z" fill="white" stroke="black" stroke-width="2.5"/>
+  <path d="M 50 44 Q 48 60 50 75" fill="none" stroke="black" stroke-width="1"/>
+  <circle cx="50" cy="78" r="4" fill="white" stroke="black" stroke-width="1.5"/>
+  <path d="M 40 50 Q 30 70 36 90" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 60 50 Q 70 70 64 90" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 44 110 L 42 134" stroke="black" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 58 110 L 60 134" stroke="black" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 36 138 L 48 138 L 46 142 L 38 142 Z" fill="white" stroke="black" stroke-width="2"/>
+  <path d="M 54 138 L 66 138 L 64 142 L 56 142 Z" fill="white" stroke="black" stroke-width="2"/>
+</g>
+</g>
+    </svg>
+  </div>
+  <div class="bubbles"><div class="bubble"><span class="speaker">Mr. Pemberton Quill:</span> …ahí está.</div></div>
+</div>
+
+
+<div class="panel">
+  <div class="panel-art">
+    <span class="framing-tag">CLOSE</span>
+    <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+      <rect x="0" y="0" width="400" height="220" fill="white" stroke="black" stroke-width="2"/>
+      
+<g>
+  <rect x="30" y="60" width="340" height="80" fill="white" stroke="black" stroke-width="2.5" rx="10"/>
+  <line x1="200" y1="65" x2="200" y2="135" stroke="black" stroke-width="1.5"/>
+  <rect x="20"  y="90" width="20" height="60" fill="white" stroke="black" stroke-width="2.5" rx="3"/>
+  <rect x="360" y="90" width="20" height="60" fill="white" stroke="black" stroke-width="2.5" rx="3"/>
+  <ellipse cx="120" cy="100" rx="22" ry="14" fill="white" stroke="black" stroke-width="2"/>
+  <line x1="0" y1="180" x2="400" y2="180" stroke="black" stroke-width="2"/>
+</g>
+<g transform="translate(127.50, 2.00) scale(1.45)">
+<g>
+  <circle cx="22" cy="20" r="8" fill="white" stroke="black" stroke-width="2"/>
+  <circle cx="78" cy="20" r="8" fill="white" stroke="black" stroke-width="2"/>
+  <circle cx="50" cy="32" r="22" fill="white" stroke="black" stroke-width="2.5"/>
+  <circle cx="42" cy="32" r="2" fill="black"/>
+  <circle cx="58" cy="32" r="2" fill="black"/>
+  <path d="M 43 42 Q 50 47 57 42" fill="none" stroke="black" stroke-width="2" stroke-linecap="round"/>
+  <path d="M 28 60 Q 22 92 36 105 L 64 105 Q 78 92 72 60 Z" fill="white" stroke="black" stroke-width="2.5"/>
+  <path d="M 38 78 Q 38 92 50 94 Q 62 92 62 78" fill="none" stroke="black" stroke-width="1.5"/>
+  <path d="M 28 70 Q 14 80 16 95" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 72 70 Q 86 80 84 95" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 42 105 L 40 132" stroke="black" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 58 105 L 60 132" stroke="black" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <ellipse cx="40" cy="135" rx="6" ry="3" fill="white" stroke="black" stroke-width="2"/>
+  <ellipse cx="60" cy="135" rx="6" ry="3" fill="white" stroke="black" stroke-width="2"/>
+</g>
+</g>
+    </svg>
+  </div>
+  <div class="bubbles"><div class="bubble"><span class="speaker">Mira:</span> ¿Ahí está qué?</div></div>
+</div>
+
+
+<div class="panel">
+  <div class="panel-art">
+    <span class="framing-tag">MEDIUM</span>
+    <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+      <rect x="0" y="0" width="400" height="220" fill="white" stroke="black" stroke-width="2"/>
+      
+<g>
+  <rect x="30" y="60" width="340" height="80" fill="white" stroke="black" stroke-width="2.5" rx="10"/>
+  <line x1="200" y1="65" x2="200" y2="135" stroke="black" stroke-width="1.5"/>
+  <rect x="20"  y="90" width="20" height="60" fill="white" stroke="black" stroke-width="2.5" rx="3"/>
+  <rect x="360" y="90" width="20" height="60" fill="white" stroke="black" stroke-width="2.5" rx="3"/>
+  <ellipse cx="120" cy="100" rx="22" ry="14" fill="white" stroke="black" stroke-width="2"/>
+  <line x1="0" y1="180" x2="400" y2="180" stroke="black" stroke-width="2"/>
+</g>
+<g transform="translate(152.50, 52.00) scale(0.95)">
+<g>
+  <path d="M 38 18 Q 50 4 64 18" fill="white" stroke="black" stroke-width="2"/>
+  <circle cx="52" cy="22" r="14" fill="white" stroke="black" stroke-width="2.5"/>
+  <circle cx="46" cy="22" r="1.6" fill="black"/>
+  <circle cx="56" cy="22" r="1.6" fill="black"/>
+  <path d="M 46 28 Q 51 31 56 28" fill="none" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M 46 36 L 52 44 L 58 36 L 56 41 L 48 41 Z" fill="white" stroke="black" stroke-width="1.5"/>
+  <path d="M 40 44 Q 36 80 38 110 L 64 110 Q 64 80 60 44 Z" fill="white" stroke="black" stroke-width="2.5"/>
+  <path d="M 50 44 Q 48 60 50 75" fill="none" stroke="black" stroke-width="1"/>
+  <circle cx="50" cy="78" r="4" fill="white" stroke="black" stroke-width="1.5"/>
+  <path d="M 40 50 Q 30 70 36 90" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 60 50 Q 70 70 64 90" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 44 110 L 42 134" stroke="black" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 58 110 L 60 134" stroke="black" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 36 138 L 48 138 L 46 142 L 38 142 Z" fill="white" stroke="black" stroke-width="2"/>
+  <path d="M 54 138 L 66 138 L 64 142 L 56 142 Z" fill="white" stroke="black" stroke-width="2"/>
+</g>
+</g>
+    </svg>
+  </div>
+  <div class="bubbles"><div class="bubble"><span class="speaker">Mr. Pemberton Quill:</span> El fijarse callado. Volvió. Estuvo aquí todo el tiempo. Solo necesitaba a alguien que se quedara quieto con él.</div></div>
+</div>
+
+  </div>
+  <footer class="page-footer"><span>page 6</span></footer>
+</section>
+
+
+<section class="page">
+  <header class="page-header">
+    <h2>Scene 6 <span class="dim">of 6</span> — sorting floor</h2>
+  </header>
+  <div class="panels panels-4">
+    
+<div class="panel">
+  <div class="panel-art">
+    <span class="framing-tag">WIDE</span>
+    <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+      <rect x="0" y="0" width="400" height="220" fill="white" stroke="black" stroke-width="2"/>
+      
+<g>
+  <rect x="20"  y="40" width="50" height="50" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="80"  y="50" width="55" height="40" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="145" y="35" width="50" height="55" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="205" y="45" width="60" height="45" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="275" y="40" width="50" height="50" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="335" y="50" width="50" height="40" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="30"  y="55" width="30" height="10" fill="white" stroke="black" stroke-width="1.5"/>
+  <rect x="90"  y="60" width="35" height="10" fill="white" stroke="black" stroke-width="1.5"/>
+  <rect x="155" y="50" width="30" height="10" fill="white" stroke="black" stroke-width="1.5"/>
+  <rect x="215" y="55" width="40" height="10" fill="white" stroke="black" stroke-width="1.5"/>
+  <rect x="285" y="55" width="30" height="10" fill="white" stroke="black" stroke-width="1.5"/>
+  <line x1="0" y1="180" x2="400" y2="180" stroke="black" stroke-width="2"/>
+  <line x1="0" y1="200" x2="400" y2="200" stroke="black" stroke-width="2"/>
+  <line x1="0"   y1="180" x2="0"   y2="200" stroke="black" stroke-width="2"/>
+  <line x1="400" y1="180" x2="400" y2="200" stroke="black" stroke-width="2"/>
+  <circle cx="60"  cy="190" r="2" fill="black"/>
+  <circle cx="140" cy="190" r="2" fill="black"/>
+  <circle cx="220" cy="190" r="2" fill="black"/>
+  <circle cx="300" cy="190" r="2" fill="black"/>
+  <circle cx="380" cy="190" r="2" fill="black"/>
+</g>
+<g transform="translate(87.50, 66.00) scale(0.85)">
+<g>
+  <circle cx="22" cy="20" r="8" fill="white" stroke="black" stroke-width="2"/>
+  <circle cx="78" cy="20" r="8" fill="white" stroke="black" stroke-width="2"/>
+  <circle cx="50" cy="32" r="22" fill="white" stroke="black" stroke-width="2.5"/>
+  <circle cx="42" cy="32" r="2" fill="black"/>
+  <circle cx="58" cy="32" r="2" fill="black"/>
+  <path d="M 43 42 Q 50 47 57 42" fill="none" stroke="black" stroke-width="2" stroke-linecap="round"/>
+  <path d="M 28 60 Q 22 92 36 105 L 64 105 Q 78 92 72 60 Z" fill="white" stroke="black" stroke-width="2.5"/>
+  <path d="M 38 78 Q 38 92 50 94 Q 62 92 62 78" fill="none" stroke="black" stroke-width="1.5"/>
+  <path d="M 28 70 Q 14 80 16 95" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 72 70 Q 86 80 84 95" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 42 105 L 40 132" stroke="black" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 58 105 L 60 132" stroke="black" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <ellipse cx="40" cy="135" rx="6" ry="3" fill="white" stroke="black" stroke-width="2"/>
+  <ellipse cx="60" cy="135" rx="6" ry="3" fill="white" stroke="black" stroke-width="2"/>
+</g>
+</g><g transform="translate(227.50, 66.00) scale(0.85)">
+<g>
+  <path d="M 38 18 Q 50 4 64 18" fill="white" stroke="black" stroke-width="2"/>
+  <circle cx="52" cy="22" r="14" fill="white" stroke="black" stroke-width="2.5"/>
+  <circle cx="46" cy="22" r="1.6" fill="black"/>
+  <circle cx="56" cy="22" r="1.6" fill="black"/>
+  <path d="M 46 28 Q 51 31 56 28" fill="none" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M 46 36 L 52 44 L 58 36 L 56 41 L 48 41 Z" fill="white" stroke="black" stroke-width="1.5"/>
+  <path d="M 40 44 Q 36 80 38 110 L 64 110 Q 64 80 60 44 Z" fill="white" stroke="black" stroke-width="2.5"/>
+  <path d="M 50 44 Q 48 60 50 75" fill="none" stroke="black" stroke-width="1"/>
+  <circle cx="50" cy="78" r="4" fill="white" stroke="black" stroke-width="1.5"/>
+  <path d="M 40 50 Q 30 70 36 90" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 60 50 Q 70 70 64 90" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 44 110 L 42 134" stroke="black" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 58 110 L 60 134" stroke="black" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 36 138 L 48 138 L 46 142 L 38 142 Z" fill="white" stroke="black" stroke-width="2"/>
+  <path d="M 54 138 L 66 138 L 64 142 L 56 142 Z" fill="white" stroke="black" stroke-width="2"/>
+</g>
+</g>
+    </svg>
+  </div>
+  <div class="bubbles"></div>
+</div>
+
+
+<div class="panel">
+  <div class="panel-art">
+    <span class="framing-tag">MEDIUM</span>
+    <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+      <rect x="0" y="0" width="400" height="220" fill="white" stroke="black" stroke-width="2"/>
+      
+<g>
+  <rect x="20"  y="40" width="50" height="50" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="80"  y="50" width="55" height="40" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="145" y="35" width="50" height="55" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="205" y="45" width="60" height="45" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="275" y="40" width="50" height="50" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="335" y="50" width="50" height="40" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="30"  y="55" width="30" height="10" fill="white" stroke="black" stroke-width="1.5"/>
+  <rect x="90"  y="60" width="35" height="10" fill="white" stroke="black" stroke-width="1.5"/>
+  <rect x="155" y="50" width="30" height="10" fill="white" stroke="black" stroke-width="1.5"/>
+  <rect x="215" y="55" width="40" height="10" fill="white" stroke="black" stroke-width="1.5"/>
+  <rect x="285" y="55" width="30" height="10" fill="white" stroke="black" stroke-width="1.5"/>
+  <line x1="0" y1="180" x2="400" y2="180" stroke="black" stroke-width="2"/>
+  <line x1="0" y1="200" x2="400" y2="200" stroke="black" stroke-width="2"/>
+  <line x1="0"   y1="180" x2="0"   y2="200" stroke="black" stroke-width="2"/>
+  <line x1="400" y1="180" x2="400" y2="200" stroke="black" stroke-width="2"/>
+  <circle cx="60"  cy="190" r="2" fill="black"/>
+  <circle cx="140" cy="190" r="2" fill="black"/>
+  <circle cx="220" cy="190" r="2" fill="black"/>
+  <circle cx="300" cy="190" r="2" fill="black"/>
+  <circle cx="380" cy="190" r="2" fill="black"/>
+</g>
+<g transform="translate(152.50, 52.00) scale(0.95)">
+<g>
+  <path d="M 38 18 Q 50 4 64 18" fill="white" stroke="black" stroke-width="2"/>
+  <circle cx="52" cy="22" r="14" fill="white" stroke="black" stroke-width="2.5"/>
+  <circle cx="46" cy="22" r="1.6" fill="black"/>
+  <circle cx="56" cy="22" r="1.6" fill="black"/>
+  <path d="M 46 28 Q 51 31 56 28" fill="none" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M 46 36 L 52 44 L 58 36 L 56 41 L 48 41 Z" fill="white" stroke="black" stroke-width="1.5"/>
+  <path d="M 40 44 Q 36 80 38 110 L 64 110 Q 64 80 60 44 Z" fill="white" stroke="black" stroke-width="2.5"/>
+  <path d="M 50 44 Q 48 60 50 75" fill="none" stroke="black" stroke-width="1"/>
+  <circle cx="50" cy="78" r="4" fill="white" stroke="black" stroke-width="1.5"/>
+  <path d="M 40 50 Q 30 70 36 90" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 60 50 Q 70 70 64 90" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 44 110 L 42 134" stroke="black" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 58 110 L 60 134" stroke="black" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 36 138 L 48 138 L 46 142 L 38 142 Z" fill="white" stroke="black" stroke-width="2"/>
+  <path d="M 54 138 L 66 138 L 64 142 L 56 142 Z" fill="white" stroke="black" stroke-width="2"/>
+</g>
+</g>
+    </svg>
+  </div>
+  <div class="bubbles"><div class="bubble"><span class="speaker">Mr. Pemberton Quill:</span> Pruébalo mañana. Elige una cosa pequeña. Una miga. Una grieta en el suelo. Una pelusa en un guante. Mírala el tiempo que tarda una nube en moverse.</div></div>
+</div>
+
+
+<div class="panel">
+  <div class="panel-art">
+    <span class="framing-tag">CLOSE</span>
+    <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+      <rect x="0" y="0" width="400" height="220" fill="white" stroke="black" stroke-width="2"/>
+      
+<g>
+  <rect x="20"  y="40" width="50" height="50" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="80"  y="50" width="55" height="40" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="145" y="35" width="50" height="55" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="205" y="45" width="60" height="45" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="275" y="40" width="50" height="50" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="335" y="50" width="50" height="40" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="30"  y="55" width="30" height="10" fill="white" stroke="black" stroke-width="1.5"/>
+  <rect x="90"  y="60" width="35" height="10" fill="white" stroke="black" stroke-width="1.5"/>
+  <rect x="155" y="50" width="30" height="10" fill="white" stroke="black" stroke-width="1.5"/>
+  <rect x="215" y="55" width="40" height="10" fill="white" stroke="black" stroke-width="1.5"/>
+  <rect x="285" y="55" width="30" height="10" fill="white" stroke="black" stroke-width="1.5"/>
+  <line x1="0" y1="180" x2="400" y2="180" stroke="black" stroke-width="2"/>
+  <line x1="0" y1="200" x2="400" y2="200" stroke="black" stroke-width="2"/>
+  <line x1="0"   y1="180" x2="0"   y2="200" stroke="black" stroke-width="2"/>
+  <line x1="400" y1="180" x2="400" y2="200" stroke="black" stroke-width="2"/>
+  <circle cx="60"  cy="190" r="2" fill="black"/>
+  <circle cx="140" cy="190" r="2" fill="black"/>
+  <circle cx="220" cy="190" r="2" fill="black"/>
+  <circle cx="300" cy="190" r="2" fill="black"/>
+  <circle cx="380" cy="190" r="2" fill="black"/>
+</g>
+<g transform="translate(127.50, 2.00) scale(1.45)">
+<g>
+  <circle cx="22" cy="20" r="8" fill="white" stroke="black" stroke-width="2"/>
+  <circle cx="78" cy="20" r="8" fill="white" stroke="black" stroke-width="2"/>
+  <circle cx="50" cy="32" r="22" fill="white" stroke="black" stroke-width="2.5"/>
+  <circle cx="42" cy="32" r="2" fill="black"/>
+  <circle cx="58" cy="32" r="2" fill="black"/>
+  <path d="M 43 42 Q 50 47 57 42" fill="none" stroke="black" stroke-width="2" stroke-linecap="round"/>
+  <path d="M 28 60 Q 22 92 36 105 L 64 105 Q 78 92 72 60 Z" fill="white" stroke="black" stroke-width="2.5"/>
+  <path d="M 38 78 Q 38 92 50 94 Q 62 92 62 78" fill="none" stroke="black" stroke-width="1.5"/>
+  <path d="M 28 70 Q 14 80 16 95" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 72 70 Q 86 80 84 95" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 42 105 L 40 132" stroke="black" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 58 105 L 60 132" stroke="black" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <ellipse cx="40" cy="135" rx="6" ry="3" fill="white" stroke="black" stroke-width="2"/>
+  <ellipse cx="60" cy="135" rx="6" ry="3" fill="white" stroke="black" stroke-width="2"/>
+</g>
+</g>
+    </svg>
+  </div>
+  <div class="bubbles"><div class="bubble"><span class="speaker">Mira:</span> Vale-vale— …vale.</div></div>
+</div>
+
+
+<div class="panel">
+  <div class="panel-art">
+    <span class="framing-tag">CLOSE</span>
+    <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+      <rect x="0" y="0" width="400" height="220" fill="white" stroke="black" stroke-width="2"/>
+      
+<g>
+  <rect x="20"  y="40" width="50" height="50" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="80"  y="50" width="55" height="40" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="145" y="35" width="50" height="55" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="205" y="45" width="60" height="45" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="275" y="40" width="50" height="50" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="335" y="50" width="50" height="40" fill="white" stroke="black" stroke-width="2"/>
+  <rect x="30"  y="55" width="30" height="10" fill="white" stroke="black" stroke-width="1.5"/>
+  <rect x="90"  y="60" width="35" height="10" fill="white" stroke="black" stroke-width="1.5"/>
+  <rect x="155" y="50" width="30" height="10" fill="white" stroke="black" stroke-width="1.5"/>
+  <rect x="215" y="55" width="40" height="10" fill="white" stroke="black" stroke-width="1.5"/>
+  <rect x="285" y="55" width="30" height="10" fill="white" stroke="black" stroke-width="1.5"/>
+  <line x1="0" y1="180" x2="400" y2="180" stroke="black" stroke-width="2"/>
+  <line x1="0" y1="200" x2="400" y2="200" stroke="black" stroke-width="2"/>
+  <line x1="0"   y1="180" x2="0"   y2="200" stroke="black" stroke-width="2"/>
+  <line x1="400" y1="180" x2="400" y2="200" stroke="black" stroke-width="2"/>
+  <circle cx="60"  cy="190" r="2" fill="black"/>
+  <circle cx="140" cy="190" r="2" fill="black"/>
+  <circle cx="220" cy="190" r="2" fill="black"/>
+  <circle cx="300" cy="190" r="2" fill="black"/>
+  <circle cx="380" cy="190" r="2" fill="black"/>
+</g>
+<g transform="translate(127.50, 2.00) scale(1.45)">
+<g>
+  <circle cx="22" cy="20" r="8" fill="white" stroke="black" stroke-width="2"/>
+  <circle cx="78" cy="20" r="8" fill="white" stroke="black" stroke-width="2"/>
+  <circle cx="50" cy="32" r="22" fill="white" stroke="black" stroke-width="2.5"/>
+  <circle cx="42" cy="32" r="2" fill="black"/>
+  <circle cx="58" cy="32" r="2" fill="black"/>
+  <path d="M 43 42 Q 50 47 57 42" fill="none" stroke="black" stroke-width="2" stroke-linecap="round"/>
+  <path d="M 28 60 Q 22 92 36 105 L 64 105 Q 78 92 72 60 Z" fill="white" stroke="black" stroke-width="2.5"/>
+  <path d="M 38 78 Q 38 92 50 94 Q 62 92 62 78" fill="none" stroke="black" stroke-width="1.5"/>
+  <path d="M 28 70 Q 14 80 16 95" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 72 70 Q 86 80 84 95" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 42 105 L 40 132" stroke="black" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 58 105 L 60 132" stroke="black" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <ellipse cx="40" cy="135" rx="6" ry="3" fill="white" stroke="black" stroke-width="2"/>
+  <ellipse cx="60" cy="135" rx="6" ry="3" fill="white" stroke="black" stroke-width="2"/>
+</g>
+</g>
+    </svg>
+  </div>
+  <div class="bubbles"><div class="bubble"><span class="speaker">Mira:</span> …me fijé en ti.</div></div>
+</div>
+
+  </div>
+  <footer class="page-footer"><span>page 7</span></footer>
+</section>
+
+</body>
+</html>

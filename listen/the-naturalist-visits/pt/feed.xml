@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:podcast="https://podcastindex.org/namespace/1.0">
+  <channel>
+    <title>Desenhos do Achados e Perdidos: histórias para ouvir</title>
+    <link>https://cartoons.luispereira.me/listen/the-naturalist-visits/pt/</link>
+    <atom:link href="https://cartoons.luispereira.me/listen/the-naturalist-visits/pt/feed.xml" rel="self" type="application/rss+xml"/>
+    <language>pt</language>
+    <description>Histórias curtas e tranquilas para ouvir, para crianças de 4 a 8 anos, em português, de Desenhos do Achados e Perdidos. Cada uma é a trilha sonora de um dos nossos desenhos animados: as mesmas vozes, músicas e sons. Para ouvir com a tela desligada.</description>
+    <copyright>© luiscper-cartoons</copyright>
+    <podcast:guid>77ceab6c-c5d7-5ff3-82b8-4ac8eff86bea</podcast:guid>
+    <itunes:author>Desenhos do Achados e Perdidos</itunes:author>
+    <itunes:image href="https://cartoons.luispereira.me/listen/the-naturalist-visits/pt/cover.jpg"/>
+    <image>
+      <url>https://cartoons.luispereira.me/listen/the-naturalist-visits/pt/cover.jpg</url>
+      <title>Desenhos do Achados e Perdidos: histórias para ouvir</title>
+      <link>https://cartoons.luispereira.me/listen/the-naturalist-visits/pt/</link>
+    </image>
+    <itunes:category text="Kids &amp; Family">
+      <itunes:category text="Stories for Kids"/>
+    </itunes:category>
+    <itunes:explicit>false</itunes:explicit>
+    <itunes:type>episodic</itunes:type>
+    <!-- Draft feed, not a release build: rebuild in strict mode before submitting. -->
+    <itunes:block>Yes</itunes:block>
+    <item>
+      <title>O Naturalista Visita</title>
+      <description>Quando um velho naturalista de voz baixinha chega ao Achados e Perdidos sem a última página do seu caderninho de campo, a pequena classificadora apressada Mira precisa desacelerar o bastante pra descobrir que ele perdeu também uma coisa mais quietinha. A trilha sonora do nosso desenho animado, 4 min. Transcrição e desenho animado: https://cartoons.luispereira.me/listen/the-naturalist-visits/pt/</description>
+      <link>https://cartoons.luispereira.me/listen/the-naturalist-visits/pt/</link>
+      <guid isPermaLink="false">luiscper-cartoons:the-naturalist-visits:pt:audio</guid>
+      <pubDate>Mon, 18 May 2026 19:24:37 GMT</pubDate>
+      <enclosure url="https://cartoons.luispereira.me/listen/the-naturalist-visits/pt/the-naturalist-visits.pt.mp3" length="3106167" type="audio/mpeg"/>
+      <itunes:duration>259</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:image href="https://cartoons.luispereira.me/listen/the-naturalist-visits/pt/cover.jpg"/>
+    </item>
+  </channel>
+</rss>

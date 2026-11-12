@@ -1,0 +1,21 @@
+# Story embed (tools/site-builder/embed.py): other websites may show these
+# player routes in an iframe. No other route is changed.
+/embed/the-naturalist-visits/en/*
+  Content-Security-Policy: frame-ancestors *
+  Referrer-Policy: strict-origin-when-cross-origin
+/embed/the-naturalist-visits/es/*
+  Content-Security-Policy: frame-ancestors *
+  Referrer-Policy: strict-origin-when-cross-origin
+/embed/the-naturalist-visits/pt/*
+  Content-Security-Policy: frame-ancestors *
+  Referrer-Policy: strict-origin-when-cross-origin
+# Audio story feeds (tools/site-builder/listen.py). No other route is changed.
+/listen/the-naturalist-visits/en/feed.xml
+  Content-Type: application/rss+xml; charset=utf-8
+  Access-Control-Allow-Origin: *
+/listen/the-naturalist-visits/es/feed.xml
+  Content-Type: application/rss+xml; charset=utf-8
+  Access-Control-Allow-Origin: *
+/listen/the-naturalist-visits/pt/feed.xml
+  Content-Type: application/rss+xml; charset=utf-8
+  Access-Control-Allow-Origin: *
